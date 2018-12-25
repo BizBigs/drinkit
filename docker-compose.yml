@@ -1,0 +1,62 @@
+version: '3.7'
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: 0963
+      MYSQL_DATABASE: docker-projects
+      MYSQL_USER: Bigs
+      MYSQL_PASSWORD: 0963
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: on-failure
+    ports:
+      - 8080:8080
+
+  nginx:
+    container_name: nginx
+    image: nginx:1.15.3-alpine
+    restart: on-failure
+    volumes:
+      - './docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro'
+    ports:
+      - 80:80
+    depends_on:
+      - php
+
+  php:
+    container_name: php
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    restart: on-failure
+    volumes:
+      - './apps/symfony-app:/usr/src/app:rw'
+    env_file:
+      - .env
+    user: 1000:1000
+    working_dir: "/usr/src/app"
+
+
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: sf4_phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+        - 8000:8080
+    links:
+      - mysql
+
+  maildev:
+    image: djfarrelly/maildev
+    container_name: maildev
+    ports:
+      - 8001:80
