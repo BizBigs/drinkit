@@ -12,7 +12,7 @@ class DefaultController extends Controller
         return new Response('
             <html>
                 <body>
-                    <h1>Hello Symfony 4 World iuhiuchiasselol</h1>
+                    <h1>Hello Symfony 4 !</h1>
                 </body>
             </html>
         ');
