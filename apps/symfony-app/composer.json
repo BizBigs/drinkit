@@ -1,5 +1,7 @@
 {
-    "type": "project",
+    "name": "symfony/symfony",
+    "type": "library",
+    "description": "The Symfony PHP framework",
     "license": "proprietary",
     "require": {
         "php": "^7.1.3",
