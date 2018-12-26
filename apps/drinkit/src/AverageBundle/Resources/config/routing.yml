@@ -1,0 +1,4 @@
+average_index:
+    prefix: /average
+    path: /
+    defaults: { _controller: App\AverageBundle\Controller\AverageController::index }

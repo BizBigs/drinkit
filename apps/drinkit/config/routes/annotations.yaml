@@ -1,3 +1,5 @@
-controllers:
-    resource: ../../src/Controller/
-    type: annotation
+AverageBundleControllers:
+    resource: '@AverageBundle/Resources/config/routing.yml'
+
+HomeBundleControllers:
+    resource: '@HomeBundle/Resources/config/routing.yml'

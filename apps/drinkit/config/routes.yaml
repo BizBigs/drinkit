@@ -1,3 +1,7 @@
-index:
-    path: /
-    controller: App\Controller\DefaultController::index
+average_index:
+    prefix: /average/
+    resource: '@AverageBundle/Resources/config/routing.yml'
+
+home_index:
+    prefix: /
+    resource: '@HomeBundle/Resources/config/routing.yml'
