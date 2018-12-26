@@ -20,9 +20,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php -r "unlink('composer-setup.php');" \
     && mv composer /usr/local/bin/composer
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/drinkit
 
-COPY apps/symfony-app /usr/src/app
+COPY apps/drinkit /usr/src/app/drinkit
 
 RUN PATH=$PATH:/usr/src/apps/vendor/bin:bin
 

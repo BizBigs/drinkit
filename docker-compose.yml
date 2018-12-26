@@ -36,11 +36,11 @@ services:
       dockerfile: docker/php/Dockerfile
     restart: on-failure
     volumes:
-      - './apps/symfony-app:/usr/src/app:rw'
+      - './apps/drinkit:/usr/src/app/drinkit:rw'
     env_file:
       - .env
     user: 1000:1000
-    working_dir: "/usr/src/app"
+    working_dir: "/usr/src/app/drinkit"
 
 
 
@@ -51,7 +51,7 @@ services:
       PMA_HOST: mysql
       PMA_PORT: 3306
     ports:
-        - 8000:8080
+        - 8050:8050
     links:
       - mysql
 
