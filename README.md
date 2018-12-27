@@ -60,7 +60,7 @@ Install Docker on your PC :
 
 # 6 : phpMyADMIN 
 
-    If you just go on http://localhost:8080 you will get to phpmyadmin front page but you want be able to connect to your Databases.
+    If you just go on http://localhost:8080 you will get to phpmyadmin front page but you won't be able to connect to your Databases.
     You need to configure an adminstrator user in mysql container:
 
         - Run 'docker exec -it ${mysql_container_name} bash' to connect to mysql container
