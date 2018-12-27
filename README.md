@@ -1,15 +1,16 @@
 
-<!-- FIRST STEP -->
+# FIRST STEP
+
 Install Docker on your PC :
     - https://hub.docker.com/editions/community/docker-ce-desktop-windows
 
     During installation, don't forget to share the drive you will work on. It can be done later in Docker -> Settings -> Shared Drives.
 
-<!-- 2 : Set your environment variables -->
+# 2 : Set your environment variables 
 
     - in .env file, set all your wanted environment variables.
 
-<!-- 3 : Play the docker-compose.yml -->
+# 3 : Play the docker-compose.yml 
 
     - Make sure to be in your working folder root (must be the docker-compose.yml file)
     - Run 'docker-compose build' -> This will create/download all your images for you containers. 
@@ -27,7 +28,7 @@ Install Docker on your PC :
                     php              docker-php-entrypoint php-fpm    Up      9000/tcp
                     sf4_phpmyadmin   /run.sh supervisord -n -j  ...   Up      0.0.0.0:8080->80/tcp, 9000/tcp
 
-<!-- 4 : Install dependencies for Symfony -->
+# 4 : Install dependencies for Symfony 
 
     2 ways are possible, from the container or from your host :
         
@@ -53,11 +54,11 @@ Install Docker on your PC :
                 The container will listen every change you make on the files you have in those specific directories.
                 Very usefull because it allows you to develop and test your code without rebuilding your images every time you make a change.
 
-<!-- 5 : Test it -->
+# 5 : Test it 
     
     If the 4 previous steps were done correctly you can go check http://localhost and you should have the Home Page.
 
-<!-- 6 : phpMyADMIN -->
+# 6 : phpMyADMIN 
 
     If you just go on http://localhost:8080 you will get to phpmyadmin front page but you want be able to connect to your Databases.
     You need to configure an adminstrator user in mysql container:
@@ -74,4 +75,4 @@ Install Docker on your PC :
 
         Replace all ${ ... } by your chosen adminstrator name and password.
 
-<!-- ENJOY ! :D -->
+# ENJOY ! :D 
